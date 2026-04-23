@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EEH Voyage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f6f2;
+      --text:#1a1a1a;
+      --muted:#555;
+      --accent:#6b7c8a;
+      --card:#ffffff;
+      --max:1200px;
+      --text-width:780px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      font-family:"Playfair Display", Georgia, serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit; text-decoration:none;}
+
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    section{
+      padding:96px 0;
+    }
+
+    .center{
+      display:flex;
+      justify-content:center;
+    }
+
+    .text-block{
+      max-width:var(--text-width);
+      margin:0 auto;
+    }
+
+    h1{
+      font-size:56px;
+      line-height:1.1;
+      margin:0 0 24px;
+      letter-spacing:-0.5px;
+    }
+
+    h2{
+      font-size:32px;
+      margin:0 0 24px;
+      line-height:1.2;
+    }
+
+    p{
+      font-size:17px;
+      margin:0 0 16px;
+    }
+
+    small{
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border:1px solid var(--text);
+      background:transparent;
+      font-size:15px;
+      transition:all .3s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:var(--text);
+      color:#fff;
+    }
+
+    .hero{
+      padding:120px 0 96px;
+      text-align:center;
+    }
+
+    .hero img{
+      width:100%;
+      max-height:520px;
+      object-fit:cover;
+      margin-top:48px;
+      opacity:0;
+      transform:scale(1.02);
+      animation:fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn{
+      to{
+        opacity:1;
+        transform:scale(1);
+      }
+    }
+
+    .grid{
+      display:grid;
+      gap:32px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:32px;
+      border:1px solid rgba(0,0,0,0.06);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:48px;
+    }
+
+    @media(max-width:900px){
+      h1{font-size:38px;}
+      section{padding:72px 0;}
+      .two-col{grid-template-columns:1fr;}
+    }
+
+    @media(max-width:600px){
+      h1{font-size:32px;}
+      section{padding:64px 0;}
+    }
+
+    .fade{
+      opacity:0;
+      transform:translateY(14px);
+      transition:all .6s ease;
+    }
+
+    .fade.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    form input, form textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:16px;
+      border:1px solid rgba(0,0,0,0.2);
+      font-family:inherit;
+      background:#fff;
+    }
+
+    form button{
+      width:100%;
+    }
+
+    .faq-item{
+      border-bottom:1px solid rgba(0,0,0,0.08);
+      padding:16px 0;
+    }
+
+    .label{
+      font-size:13px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero container fade">
+    <div class="text-block">
+      <h1>Travel Planning, Handled Well.</h1>
+      <p>Cruises and custom trips, thoughtfully planned with trusted partners and personalized guidance.</p>
+      <button class="btn">Start Planning</button>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop" alt="ocean travel" />
+  </section>
+
+  <!-- CREDIBILITY -->
+  <section class="container fade">
+    <div class="text-block">
+      <div class="label">Credibility</div>
+      <p>Affiliate of Fora Travel</p>
+      <p>Trained across cruise lines and global travel partners</p>
+      <p>Access to preferred perks and amenities (when available)</p>
+      <small>Focused on thoughtful planning, not mass booking.</small>
+    </div>
+  </section>
+
+  <!-- PROBLEM → RELIEF -->
+  <section class="container fade">
+    <div class="text-block">
+      <h2>Problem</h2>
+      <p>Planning a trip takes time—researching options, comparing details, and coordinating everything.</p>
+
+      <h2>Relief</h2>
+      <p>You don’t have to do that.</p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="container fade">
+    <div class="text-block">
+      <h2>What You Get</h2>
+      <div class="card">
+        <p>Clear recommendations tailored to you</p>
+        <p>Help choosing the right cruise, itinerary, or destination</p>
+        <p>Booking support and coordination</p>
+        <p>Access to partner perks where applicable</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="container fade">
+    <div class="text-block">
+      <h2>How It Works</h2>
+      <div class="card">
+        <p>Share what you’re looking for</p>
+        <p>Get curated options</p>
+        <p>Refine together</p>
+        <p>Booking handled</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WORK TOGETHER -->
+  <section class="container fade">
+    <div class="text-block">
+      <h2>Why Work Together</h2>
+      <div class="card">
+        <p>Saves time</p>
+        <p>Reduces guesswork</p>
+        <p>Personalized guidance</p>
+        <p>Backed by a strong travel network</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container fade">
+    <div class="text-block">
+      <h2>FAQ</h2>
+
+      <div class="faq-item">
+        <p>Do you charge a fee?</p>
+      </div>
+      <div class="faq-item">
+        <p>What perks are included?</p>
+      </div>
+      <div class="faq-item">
+        <p>Can you help if I’m unsure where to go?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="container fade">
+    <div class="text-block">
+      <h2>Let’s plan something you’ll actually enjoy.</h2>
+      <button class="btn">Book a Consultation</button>
+
+      <form style="margin-top:32px;">
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="Travel idea (optional)" />
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
