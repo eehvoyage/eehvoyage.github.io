@@ -9,12 +9,23 @@
   <meta name="color-scheme" content="dark" />
 
   <style>
+    /* =========================
+       EEH VOYAGE — DESIGN SYSTEM (REFINED)
+       calmer, trust-first travel aesthetic
+    ========================= */
+
     :root{
-      --bg:#07080c;
+      --bg:#070b14;
+      --panel:rgba(255,255,255,.04);
+      --panel2:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.10);
       --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --soft:rgba(255,255,255,.08);
-      --stroke:rgba(255,255,255,.12);
+      --muted:rgba(255,255,255,.66);
+      --faint:rgba(255,255,255,.50);
+
+      --accent:#a7d8ff;
+      --accent2:#c7ffe3;
+
       --r:18px;
       --ease:cubic-bezier(.2,.8,.2,1);
       --wrap:min(1050px, calc(100% - 40px));
@@ -22,10 +33,13 @@
     }
 
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:var(--font);
-      background:var(--bg);
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(167,216,255,.10), transparent 60%),
+                  radial-gradient(900px 500px at 80% 30%, rgba(199,255,227,.08), transparent 60%),
+                  var(--bg);
       color:var(--text);
       overflow-x:hidden;
     }
@@ -34,88 +48,141 @@
 
     .wrap{width:var(--wrap);margin:auto}
 
-    /* background */
+    /* HERO IMAGE BACKDROP */
     .bg{
       position:fixed;inset:0;z-index:-1;
+      opacity:.35;
       background:
-        radial-gradient(40% 30% at 20% 20%, rgba(120,200,255,.18), transparent 60%),
-        radial-gradient(35% 30% at 80% 30%, rgba(255,180,220,.12), transparent 60%),
-        radial-gradient(30% 30% at 50% 80%, rgba(160,255,210,.10), transparent 60%);
-      filter:blur(40px);
-      opacity:.9;
+        radial-gradient(600px 300px at 30% 20%, rgba(255,255,255,.08), transparent 70%),
+        radial-gradient(500px 300px at 70% 60%, rgba(255,255,255,.05), transparent 70%);
+      filter: blur(40px);
     }
 
-    /* HERO */
-    .hero{padding:80px 0 40px}
-    .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-    h1{font-size:clamp(34px,5vw,56px);margin:10px 0;line-height:1.05}
-    .sub{color:var(--muted);max-width:60ch;line-height:1.6}
+    /* =========================
+       HERO
+    ========================= */
 
-    .ctaRow{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+    .hero{padding:90px 0 50px}
+
+    .kicker{
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    h1{
+      font-size:clamp(34px,5vw,56px);
+      margin:10px 0;
+      line-height:1.05;
+      letter-spacing:-0.02em;
+    }
+
+    .sub{
+      color:var(--muted);
+      max-width:62ch;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .ctaRow{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+
     .btn{
-      padding:12px 16px;border-radius:14px;
+      padding:12px 16px;
+      border-radius:14px;
       border:1px solid var(--stroke);
-      background:rgba(255,255,255,.05);
+      background:rgba(255,255,255,.04);
       text-decoration:none;
       font-weight:600;
-    }
-    .btn.primary{
-      background:rgba(255,255,255,.12)
+      transition:transform .25s var(--ease), background .25s var(--ease);
     }
 
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(167,216,255,.18), rgba(199,255,227,.10));
+      border-color:rgba(255,255,255,.18);
+    }
+
+    /* HERO IMAGE */
     .heroImg{
-      margin-top:40px;
+      margin-top:42px;
       border-radius:22px;
       height:380px;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)),
+        linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.55)),
         url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
       background-size:cover;
       background-position:center;
       border:1px solid var(--stroke);
     }
 
-    /* SECTIONS */
-    section{padding:50px 0}
-    h2{font-size:26px;margin-bottom:10px}
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section{padding:54px 0}
+
+    h2{font-size:24px;margin-bottom:10px;letter-spacing:-0.02em}
 
     .card{
-      background:rgba(255,255,255,.04);
+      background:var(--panel);
       border:1px solid var(--stroke);
       border-radius:var(--r);
       padding:18px;
+      line-height:1.7;
     }
 
-    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
 
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
-    /* steps */
+    /* STEPS */
     .steps{display:grid;gap:12px}
-    .step{padding:16px;border:1px solid var(--stroke);border-radius:var(--r);background:rgba(255,255,255,.03)}
-    .num{font-weight:700;opacity:.6}
+
+    .step{
+      padding:16px;
+      border-radius:var(--r);
+      border:1px solid var(--stroke);
+      background:var(--panel);
+    }
+
+    .step strong{display:block;margin-bottom:6px}
 
     /* FAQ */
     details{
       border:1px solid var(--stroke);
       border-radius:14px;
       padding:14px;
-      background:rgba(255,255,255,.03);
+      background:var(--panel);
     }
+
     summary{cursor:pointer;font-weight:600}
+
     details p{color:var(--muted)}
 
-    /* form */
+    /* FORM */
     form{display:grid;gap:10px}
+
     input,textarea{
       padding:12px;
       border-radius:12px;
       border:1px solid var(--stroke);
-      background:rgba(0,0,0,.2);
-      color:var(--text)
+      background:rgba(0,0,0,.25);
+      color:var(--text);
+      outline:none;
     }
 
-    .footer{padding:40px 0;color:var(--muted);font-size:12px}
+    input:focus,textarea:focus{
+      border-color:rgba(167,216,255,.4);
+    }
+
+    /* FOOTER */
+    .footer{
+      padding:40px 0;
+      color:var(--muted);
+      font-size:12px;
+    }
 
     @media(max-width:800px){
       .grid2{grid-template-columns:1fr}
@@ -131,14 +198,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="kicker">EEH VOYAGE</div>
+
     <h1>Travel Planning, Handled Well.</h1>
-    <p class="sub">Cruises and custom trips, thoughtfully planned with trusted partners and personalized guidance.</p>
+
+    <p class="sub">
+      Cruises and custom trips, thoughtfully planned with trusted partners and personalized guidance.
+    </p>
 
     <div class="ctaRow">
       <a class="btn primary" href="#contact">Start Planning</a>
     </div>
 
-    <div class="heroImg" aria-label="Travel imagery"></div>
+    <div class="heroImg"></div>
   </section>
 
   <!-- CREDIBILITY -->
@@ -148,7 +219,9 @@
       Affiliate of Fora Travel<br/>
       Trained across cruise lines and global travel partners<br/>
       Access to preferred perks and amenities (when available)
-      <p style="color:var(--muted);margin-top:10px">Focused on thoughtful planning, not mass booking.</p>
+      <p style="color:var(--muted);margin-top:10px">
+        Focused on thoughtful planning, not mass booking.
+      </p>
     </div>
   </section>
 
@@ -156,11 +229,12 @@
   <section class="grid2">
     <div class="card">
       <h2>Problem</h2>
-      <p style="color:var(--muted)">Planning a trip takes time—researching options, comparing details, and coordinating everything.</p>
+      Planning a trip takes time—researching options, comparing details, and coordinating everything.
     </div>
+
     <div class="card">
       <h2>Relief</h2>
-      <p style="color:var(--muted)">You don’t have to do that.</p>
+      You don’t have to do that.
     </div>
   </section>
 
@@ -181,10 +255,10 @@
   <section>
     <h2>How It Works</h2>
     <div class="steps">
-      <div class="step"><div class="num">01</div>Share what you’re looking for</div>
-      <div class="step"><div class="num">02</div>Get curated options</div>
-      <div class="step"><div class="num">03</div>Refine together</div>
-      <div class="step"><div class="num">04</div>Booking handled</div>
+      <div class="step"><strong>01 — Share</strong>Tell me what you’re looking for</div>
+      <div class="step"><strong>02 — Curate</strong>Get tailored options</div>
+      <div class="step"><strong>03 — Refine</strong>We adjust together</div>
+      <div class="step"><strong>04 — Book</strong>Handled smoothly</div>
     </div>
   </section>
 
@@ -204,16 +278,21 @@
   <!-- FAQ -->
   <section>
     <h2>FAQ</h2>
+
     <details>
       <summary>Do you charge a fee?</summary>
-      <p>Simple and transparent. Details shared before planning begins.</p>
+      <p>Details are shared before planning begins.</p>
     </details>
+
     <br/>
+
     <details>
       <summary>What perks are included?</summary>
-      <p>When available through partners, upgrades or added value may apply.</p>
+      <p>When available, partner benefits may apply.</p>
     </details>
+
     <br/>
+
     <details>
       <summary>Can you help if I’m unsure where to go?</summary>
       <p>Yes. That’s a common starting point.</p>
@@ -225,7 +304,7 @@
     <h2>Let’s plan something you’ll actually enjoy.</h2>
 
     <div class="card">
-      <form>
+      <form onsubmit="handleSubmit(event)">
         <input placeholder="Name" required />
         <input placeholder="Email" required />
         <textarea rows="4" placeholder="Travel idea (optional)"></textarea>
@@ -233,12 +312,39 @@
       </form>
     </div>
 
-    <p style="margin-top:14px;color:var(--muted)">Lower pressure wins. This should feel easy.</p>
+    <p style="margin-top:14px;color:var(--muted)">
+      Lower pressure wins. This should feel easy.
+    </p>
   </section>
 
   <div class="footer">© EEH Voyage</div>
 
 </main>
+
+<script>
+  /* =========================
+     EEH VOYAGE — LIGHTWEIGHT UX
+     calm conversion behavior only
+  ========================= */
+
+  function handleSubmit(e){
+    e.preventDefault();
+    alert("Thanks — I’ll be in touch shortly.");
+    e.target.reset();
+  }
+
+  /* smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if(el){
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
