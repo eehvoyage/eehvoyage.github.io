@@ -3,155 +3,242 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="EEH Voyage — personalized travel planning with trusted partners." />
+  <meta name="description" content="EEH Voyage — Personalized travel planning for thoughtful, well-designed trips." />
   <title>EEH Voyage — Travel Planning, Handled Well</title>
 
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="color-scheme" content="dark" />
+
+  <style>
+    :root{
+      --bg:#07080c;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --soft:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.12);
+      --r:18px;
+      --ease:cubic-bezier(.2,.8,.2,1);
+      --wrap:min(1050px, calc(100% - 40px));
+      --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+
+    .wrap{width:var(--wrap);margin:auto}
+
+    /* background */
+    .bg{
+      position:fixed;inset:0;z-index:-1;
+      background:
+        radial-gradient(40% 30% at 20% 20%, rgba(120,200,255,.18), transparent 60%),
+        radial-gradient(35% 30% at 80% 30%, rgba(255,180,220,.12), transparent 60%),
+        radial-gradient(30% 30% at 50% 80%, rgba(160,255,210,.10), transparent 60%);
+      filter:blur(40px);
+      opacity:.9;
+    }
+
+    /* HERO */
+    .hero{padding:80px 0 40px}
+    .kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+    h1{font-size:clamp(34px,5vw,56px);margin:10px 0;line-height:1.05}
+    .sub{color:var(--muted);max-width:60ch;line-height:1.6}
+
+    .ctaRow{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      padding:12px 16px;border-radius:14px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .btn.primary{
+      background:rgba(255,255,255,.12)
+    }
+
+    .heroImg{
+      margin-top:40px;
+      border-radius:22px;
+      height:380px;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)),
+        url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
+      background-size:cover;
+      background-position:center;
+      border:1px solid var(--stroke);
+    }
+
+    /* SECTIONS */
+    section{padding:50px 0}
+    h2{font-size:26px;margin-bottom:10px}
+
+    .card{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--stroke);
+      border-radius:var(--r);
+      padding:18px;
+    }
+
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+    /* steps */
+    .steps{display:grid;gap:12px}
+    .step{padding:16px;border:1px solid var(--stroke);border-radius:var(--r);background:rgba(255,255,255,.03)}
+    .num{font-weight:700;opacity:.6}
+
+    /* FAQ */
+    details{
+      border:1px solid var(--stroke);
+      border-radius:14px;
+      padding:14px;
+      background:rgba(255,255,255,.03);
+    }
+    summary{cursor:pointer;font-weight:600}
+    details p{color:var(--muted)}
+
+    /* form */
+    form{display:grid;gap:10px}
+    input,textarea{
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--stroke);
+      background:rgba(0,0,0,.2);
+      color:var(--text)
+    }
+
+    .footer{padding:40px 0;color:var(--muted);font-size:12px}
+
+    @media(max-width:800px){
+      .grid2{grid-template-columns:1fr}
+      .heroImg{height:260px}
+    }
+  </style>
 </head>
-
 <body>
+<div class="bg"></div>
 
-<header class="topbar">
-  <div class="wrap topbar__inner">
-    <a class="brand" href="#top">
-      <span class="brand__mark">✦</span>
-      <span class="brand__text">EEH VOYAGE</span>
-    </a>
+<main class="wrap">
 
-    <nav class="nav">
-      <a href="#credibility">Credibility</a>
-      <a href="#value">What You Get</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn--ghost" href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main id="content" class="wrap">
-
-<!-- HERO -->
-<section id="top" class="hero">
-  <div class="hero__glass">
-
-    <h1 class="h1">Travel Planning, Handled Well.</h1>
-
-    <p class="lead">
-      Cruises and custom trips, thoughtfully planned with trusted partners and personalized guidance.
-    </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">EEH VOYAGE</div>
+    <h1>Travel Planning, Handled Well.</h1>
+    <p class="sub">Cruises and custom trips, thoughtfully planned with trusted partners and personalized guidance.</p>
 
     <div class="ctaRow">
-      <a class="btn btn--primary" href="#contact">Start Planning</a>
+      <a class="btn primary" href="#contact">Start Planning</a>
     </div>
 
-  </div>
+    <div class="heroImg" aria-label="Travel imagery"></div>
+  </section>
 
-  <div class="hero__image">
-    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1400"
-         alt="Refined travel destination"
-         class="image" />
-  </div>
-</section>
+  <!-- CREDIBILITY -->
+  <section>
+    <h2>Credibility</h2>
+    <div class="card">
+      Affiliate of Fora Travel<br/>
+      Trained across cruise lines and global travel partners<br/>
+      Access to preferred perks and amenities (when available)
+      <p style="color:var(--muted);margin-top:10px">Focused on thoughtful planning, not mass booking.</p>
+    </div>
+  </section>
 
-<!-- CREDIBILITY -->
-<section id="credibility" class="section">
-  <h2 class="h2">Credibility</h2>
+  <!-- PROBLEM / RELIEF -->
+  <section class="grid2">
+    <div class="card">
+      <h2>Problem</h2>
+      <p style="color:var(--muted)">Planning a trip takes time—researching options, comparing details, and coordinating everything.</p>
+    </div>
+    <div class="card">
+      <h2>Relief</h2>
+      <p style="color:var(--muted)">You don’t have to do that.</p>
+    </div>
+  </section>
 
-  <div class="card">
-    <p>Focused on thoughtful planning, not mass booking.</p>
+  <!-- WHAT YOU GET -->
+  <section>
+    <h2>What You Get</h2>
+    <div class="card">
+      <ul>
+        <li>Clear recommendations tailored to you</li>
+        <li>Help choosing cruises, itineraries, or destinations</li>
+        <li>Booking support and coordination</li>
+        <li>Access to partner perks where applicable</li>
+      </ul>
+    </div>
+  </section>
 
-    <ul class="list">
-      <li>Affiliate of Fora Travel</li>
-      <li>Trained across cruise lines and global travel partners</li>
-      <li>Access to preferred perks and amenities (when available)</li>
-    </ul>
-  </div>
-</section>
+  <!-- HOW IT WORKS -->
+  <section>
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="num">01</div>Share what you’re looking for</div>
+      <div class="step"><div class="num">02</div>Get curated options</div>
+      <div class="step"><div class="num">03</div>Refine together</div>
+      <div class="step"><div class="num">04</div>Booking handled</div>
+    </div>
+  </section>
 
-<!-- PROBLEM / RELIEF -->
-<section class="section split">
-  <div class="card">
-    <h3>Problem</h3>
-    <p>Planning a trip takes time—researching options, comparing details, and coordinating everything.</p>
-  </div>
+  <!-- WHY -->
+  <section>
+    <h2>Why Work Together</h2>
+    <div class="card">
+      <ul>
+        <li>Saves time</li>
+        <li>Reduces guesswork</li>
+        <li>Personalized guidance</li>
+        <li>Backed by a strong travel network</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="card highlight">
-    <h3>Relief</h3>
-    <p>You don’t have to do that.</p>
-  </div>
-</section>
+  <!-- FAQ -->
+  <section>
+    <h2>FAQ</h2>
+    <details>
+      <summary>Do you charge a fee?</summary>
+      <p>Simple and transparent. Details shared before planning begins.</p>
+    </details>
+    <br/>
+    <details>
+      <summary>What perks are included?</summary>
+      <p>When available through partners, upgrades or added value may apply.</p>
+    </details>
+    <br/>
+    <details>
+      <summary>Can you help if I’m unsure where to go?</summary>
+      <p>Yes. That’s a common starting point.</p>
+    </details>
+  </section>
 
-<!-- WHAT YOU GET -->
-<section id="value" class="section">
-  <h2 class="h2">What You Get</h2>
+  <!-- FINAL CTA -->
+  <section id="contact">
+    <h2>Let’s plan something you’ll actually enjoy.</h2>
 
-  <ul class="list">
-    <li>Clear recommendations tailored to you</li>
-    <li>Help choosing the right cruise, itinerary, or destination</li>
-    <li>Booking support and coordination</li>
-    <li>Access to partner perks where applicable</li>
-  </ul>
-</section>
+    <div class="card">
+      <form>
+        <input placeholder="Name" required />
+        <input placeholder="Email" required />
+        <textarea rows="4" placeholder="Travel idea (optional)"></textarea>
+        <button class="btn primary" type="submit">Book a Consultation</button>
+      </form>
+    </div>
 
-<!-- HOW IT WORKS -->
-<section class="section">
-  <h2 class="h2">How It Works</h2>
+    <p style="margin-top:14px;color:var(--muted)">Lower pressure wins. This should feel easy.</p>
+  </section>
 
-  <div class="steps">
-    <div>Share what you’re looking for</div>
-    <div>Get curated options</div>
-    <div>Refine together</div>
-    <div>Booking handled</div>
-  </div>
-</section>
-
-<!-- WHY WORK TOGETHER -->
-<section class="section">
-  <h2 class="h2">Why Work Together</h2>
-
-  <ul class="list">
-    <li>Saves time</li>
-    <li>Reduces guesswork</li>
-    <li>Personalized guidance</li>
-    <li>Backed by a strong travel network</li>
-  </ul>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="section">
-  <h2 class="h2">FAQ</h2>
-
-  <div class="faq">
-    <button class="accordion">Do you charge a fee?</button>
-    <div class="panel"><p>Transparent pricing depending on trip complexity. Some bookings may include advisor fees.</p></div>
-
-    <button class="accordion">What perks are included?</button>
-    <div class="panel"><p>When available: upgrades, credits, and partner amenities through travel networks.</p></div>
-
-    <button class="accordion">Can you help if I’m unsure where to go?</button>
-    <div class="panel"><p>Yes — we start with your preferences and narrow down options together.</p></div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section id="contact" class="section">
-  <h2 class="h2">Let’s plan something you’ll actually enjoy.</h2>
-
-  <a class="btn btn--primary" href="#form">Book a Consultation</a>
-
-  <form id="form" class="form">
-    <input placeholder="Name" required />
-    <input placeholder="Email" type="email" required />
-    <textarea placeholder="Travel idea (optional)"></textarea>
-    <button class="btn btn--primary" type="submit">Send</button>
-  </form>
-</section>
-
-<footer class="footer">
-  <span>© EEH Voyage</span>
-</footer>
+  <div class="footer">© EEH Voyage</div>
 
 </main>
 
-<script src="./main.js"></script>
 </body>
 </html>
