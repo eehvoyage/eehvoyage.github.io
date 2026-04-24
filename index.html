@@ -3,32 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="EEH Voyage — Personalized travel planning for thoughtful, well-designed trips." />
-  <title>EEH Voyage — Travel Planning, Handled Well</title>
+  <meta name="description" content="EEH Voyage — Luxury travel planning for curated cruises and bespoke journeys." />
+  <title>EEH Voyage — Luxury Travel Planning</title>
 
   <meta name="color-scheme" content="dark" />
 
   <style>
     /* =========================
-       EEH VOYAGE — DESIGN SYSTEM (REFINED)
-       calmer, trust-first travel aesthetic
+       EEH VOYAGE — LUXURY TRAVEL SYSTEM
+       refined, editorial, high-trust
     ========================= */
 
     :root{
-      --bg:#070b14;
+      /* Luxury palette */
+      --bg:#05060a;
+      --navy:#070b18;
       --panel:rgba(255,255,255,.04);
       --panel2:rgba(255,255,255,.06);
       --stroke:rgba(255,255,255,.10);
+
       --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.66);
-      --faint:rgba(255,255,255,.50);
+      --muted:rgba(255,255,255,.64);
+      --faint:rgba(255,255,255,.48);
 
-      --accent:#a7d8ff;
-      --accent2:#c7ffe3;
+      --gold:#c8a96a;
+      --ivory:#f5f1e8;
+      --aqua:#8bd3ff;
 
-      --r:18px;
+      --r:20px;
       --ease:cubic-bezier(.2,.8,.2,1);
-      --wrap:min(1050px, calc(100% - 40px));
+      --wrap:min(1080px, calc(100% - 40px));
       --font:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
     }
 
@@ -37,32 +41,31 @@
     body{
       margin:0;
       font-family:var(--font);
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(167,216,255,.10), transparent 60%),
-                  radial-gradient(900px 500px at 80% 30%, rgba(199,255,227,.08), transparent 60%),
-                  var(--bg);
       color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(200,169,106,.10), transparent 60%),
+        radial-gradient(900px 500px at 80% 30%, rgba(139,211,255,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--navy));
       overflow-x:hidden;
     }
 
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
 
     .wrap{width:var(--wrap);margin:auto}
 
-    /* HERO IMAGE BACKDROP */
+    /* subtle luxury glow */
     .bg{
       position:fixed;inset:0;z-index:-1;
-      opacity:.35;
       background:
-        radial-gradient(600px 300px at 30% 20%, rgba(255,255,255,.08), transparent 70%),
-        radial-gradient(500px 300px at 70% 60%, rgba(255,255,255,.05), transparent 70%);
-      filter: blur(40px);
+        radial-gradient(600px 300px at 30% 20%, rgba(200,169,106,.08), transparent 70%),
+        radial-gradient(500px 300px at 70% 60%, rgba(139,211,255,.06), transparent 70%);
+      filter: blur(60px);
+      opacity:.8;
     }
 
     /* =========================
-       HERO
+       TYPOGRAPHY
     ========================= */
-
-    .hero{padding:90px 0 50px}
 
     .kicker{
       font-size:12px;
@@ -72,16 +75,28 @@
     }
 
     h1{
-      font-size:clamp(34px,5vw,56px);
-      margin:10px 0;
+      font-size:clamp(36px,5vw,60px);
       line-height:1.05;
+      margin:10px 0;
+      letter-spacing:-0.03em;
+    }
+
+    h2{
+      font-size:24px;
+      margin-bottom:12px;
       letter-spacing:-0.02em;
     }
 
+    p{color:var(--muted);line-height:1.7}
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{padding:90px 0 60px}
+
     .sub{
-      color:var(--muted);
-      max-width:62ch;
-      line-height:1.7;
+      max-width:65ch;
       font-size:15px;
     }
 
@@ -92,64 +107,66 @@
       border-radius:14px;
       border:1px solid var(--stroke);
       background:rgba(255,255,255,.04);
-      text-decoration:none;
       font-weight:600;
-      transition:transform .25s var(--ease), background .25s var(--ease);
+      transition:all .25s var(--ease);
     }
 
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.07)}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(200,169,106,.4)}
 
     .btn.primary{
-      background:linear-gradient(135deg, rgba(167,216,255,.18), rgba(199,255,227,.10));
-      border-color:rgba(255,255,255,.18);
+      background:linear-gradient(135deg, rgba(200,169,106,.22), rgba(139,211,255,.10));
+      border-color:rgba(200,169,106,.35);
+      color:var(--ivory);
     }
 
-    /* HERO IMAGE */
     .heroImg{
       margin-top:42px;
-      border-radius:22px;
-      height:380px;
+      height:420px;
+      border-radius:24px;
+      border:1px solid var(--stroke);
       background:
-        linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.55)),
+        linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.6)),
         url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=80');
       background-size:cover;
       background-position:center;
-      border:1px solid var(--stroke);
+      box-shadow:0 30px 120px rgba(0,0,0,.55);
     }
 
     /* =========================
        SECTIONS
     ========================= */
 
-    section{padding:54px 0}
-
-    h2{font-size:24px;margin-bottom:10px;letter-spacing:-0.02em}
+    section{padding:60px 0}
 
     .card{
       background:var(--panel);
       border:1px solid var(--stroke);
       border-radius:var(--r);
       padding:18px;
-      line-height:1.7;
+      backdrop-filter: blur(10px);
     }
-
-    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
 
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
-    /* STEPS */
+    /* =========================
+       STEPS
+    ========================= */
+
     .steps{display:grid;gap:12px}
 
     .step{
-      padding:16px;
+      padding:18px;
       border-radius:var(--r);
       border:1px solid var(--stroke);
-      background:var(--panel);
+      background:rgba(255,255,255,.03);
     }
 
-    .step strong{display:block;margin-bottom:6px}
+    .step strong{display:block;color:var(--ivory)}
 
-    /* FAQ */
+    /* =========================
+       FAQ
+    ========================= */
+
     details{
       border:1px solid var(--stroke);
       border-radius:14px;
@@ -157,27 +174,56 @@
       background:var(--panel);
     }
 
-    summary{cursor:pointer;font-weight:600}
+    summary{cursor:pointer;font-weight:600;color:var(--ivory)}
 
-    details p{color:var(--muted)}
+    /* =========================
+       FORM
+    ========================= */
 
-    /* FORM */
     form{display:grid;gap:10px}
 
     input,textarea{
       padding:12px;
       border-radius:12px;
       border:1px solid var(--stroke);
-      background:rgba(0,0,0,.25);
+      background:rgba(0,0,0,.3);
       color:var(--text);
-      outline:none;
     }
 
     input:focus,textarea:focus{
-      border-color:rgba(167,216,255,.4);
+      border-color:rgba(200,169,106,.5);
+      outline:none;
     }
 
-    /* FOOTER */
+    /* =========================
+       DIVIDER
+    ========================= */
+
+    .divider{
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(200,169,106,.25), transparent);
+      margin:10px 0 0;
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(12px);
+      transition:all .8s var(--ease);
+    }
+
+    .reveal.in{
+      opacity:1;
+      transform:none;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
     .footer{
       padding:40px 0;
       color:var(--muted);
@@ -186,7 +232,7 @@
 
     @media(max-width:800px){
       .grid2{grid-template-columns:1fr}
-      .heroImg{height:260px}
+      .heroImg{height:280px}
     }
   </style>
 </head>
@@ -196,9 +242,8 @@
 <main class="wrap">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero reveal">
     <div class="kicker">EEH VOYAGE</div>
-
     <h1>Travel Planning, Handled Well.</h1>
 
     <p class="sub">
@@ -213,20 +258,19 @@
   </section>
 
   <!-- CREDIBILITY -->
-  <section>
+  <section class="reveal">
     <h2>Credibility</h2>
     <div class="card">
       Affiliate of Fora Travel<br/>
       Trained across cruise lines and global travel partners<br/>
       Access to preferred perks and amenities (when available)
-      <p style="color:var(--muted);margin-top:10px">
-        Focused on thoughtful planning, not mass booking.
-      </p>
+      <div class="divider"></div>
+      <p>Focused on thoughtful planning, not mass booking.</p>
     </div>
   </section>
 
   <!-- PROBLEM / RELIEF -->
-  <section class="grid2">
+  <section class="grid2 reveal">
     <div class="card">
       <h2>Problem</h2>
       Planning a trip takes time—researching options, comparing details, and coordinating everything.
@@ -239,7 +283,7 @@
   </section>
 
   <!-- WHAT YOU GET -->
-  <section>
+  <section class="reveal">
     <h2>What You Get</h2>
     <div class="card">
       <ul>
@@ -252,18 +296,18 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section>
+  <section class="reveal">
     <h2>How It Works</h2>
     <div class="steps">
-      <div class="step"><strong>01 — Share</strong>Tell me what you’re looking for</div>
-      <div class="step"><strong>02 — Curate</strong>Get tailored options</div>
-      <div class="step"><strong>03 — Refine</strong>We adjust together</div>
-      <div class="step"><strong>04 — Book</strong>Handled smoothly</div>
+      <div class="step"><strong>01</strong>Share what you’re looking for</div>
+      <div class="step"><strong>02</strong>Get curated options</div>
+      <div class="step"><strong>03</strong>Refine together</div>
+      <div class="step"><strong>04</strong>Booking handled</div>
     </div>
   </section>
 
   <!-- WHY -->
-  <section>
+  <section class="reveal">
     <h2>Why Work Together</h2>
     <div class="card">
       <ul>
@@ -276,12 +320,12 @@
   </section>
 
   <!-- FAQ -->
-  <section>
+  <section class="reveal">
     <h2>FAQ</h2>
 
     <details>
       <summary>Do you charge a fee?</summary>
-      <p>Details are shared before planning begins.</p>
+      <p>Details shared transparently before planning begins.</p>
     </details>
 
     <br/>
@@ -300,7 +344,7 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Let’s plan something you’ll actually enjoy.</h2>
 
     <div class="card">
@@ -312,9 +356,7 @@
       </form>
     </div>
 
-    <p style="margin-top:14px;color:var(--muted)">
-      Lower pressure wins. This should feel easy.
-    </p>
+    <p>Lower pressure wins. This should feel easy.</p>
   </section>
 
   <div class="footer">© EEH Voyage</div>
@@ -322,28 +364,20 @@
 </main>
 
 <script>
-  /* =========================
-     EEH VOYAGE — LIGHTWEIGHT UX
-     calm conversion behavior only
-  ========================= */
-
   function handleSubmit(e){
     e.preventDefault();
-    alert("Thanks — I’ll be in touch shortly.");
+    alert("Thank you — I’ll follow up shortly.");
     e.target.reset();
   }
 
-  /* smooth scroll */
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const id = a.getAttribute('href');
-      const el = document.querySelector(id);
-      if(el){
-        e.preventDefault();
-        el.scrollIntoView({behavior:'smooth'});
-      }
+  /* smooth reveal */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('in');
     });
-  });
+  },{threshold:0.15});
+
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 
 </body>
